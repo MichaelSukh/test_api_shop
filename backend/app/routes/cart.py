@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from typing import Dict
 
 router = APIRouter(
-    prefix="/api/carts",
+    prefix="/api/cart",
     tags=["carts"]
 )
 
