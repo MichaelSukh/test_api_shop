@@ -4,6 +4,7 @@ from app.database import get_db
 from app.services.cart_service import CartService
 from app.schemas.cart import CartResponse, CartItemUpdate
 from pydantic import BaseModel
+from typing import Dict
 
 router = APIRouter(
     prefix="/api/carts",
