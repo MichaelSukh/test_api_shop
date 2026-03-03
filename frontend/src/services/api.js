@@ -42,6 +42,13 @@ export const productsAPI = {
   getByCategory(categoryId) {
     return apiClient.get(`/products/category/${categoryId}`)
   },
+
+  /**
+   * Создать товар
+   */
+  create(productData) {
+    return apiClient.post('/products', productData)
+  }
 }
 
 /**

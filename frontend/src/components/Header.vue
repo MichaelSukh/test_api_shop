@@ -38,6 +38,8 @@
             Catalog
           </router-link>
 
+          <router-link to="/add-product" class="text-gray-700 hover:text-black transition-colors font-medium">Добавить товар</router-link>
+
           <!-- Корзина -->
           <router-link
             to="/cart"

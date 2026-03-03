@@ -88,6 +88,25 @@ export const useProductsStore = defineStore('products', () => {
     selectedCategory.value = null
   }
 
+  /**
+   * Создать товар
+   */
+  async function createProduct(productData) {
+    loading.value = true
+    error.value = null
+    try {
+      // Отправка запрос на сервер через API
+      const response = await productsAPI.create(productData)
+      products.value.push(response.data)
+    } catch (err) {
+      error.value = 'Failed to create product'
+      console.error('Error creating product:', err)
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
+
   return {
     // State
     products,
@@ -104,5 +123,6 @@ export const useProductsStore = defineStore('products', () => {
     fetchCategories,
     setCategory,
     clearCategoryFilter,
+    createProduct
   }
 })

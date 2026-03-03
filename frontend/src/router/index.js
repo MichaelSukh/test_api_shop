@@ -8,6 +8,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
 import ProductDetailPage from '@/views/ProductDetailPage.vue'
 import CartPage from '@/views/CartPage.vue'
+import AddProductPage from '@/views/AddProductPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,14 @@ const router = createRouter({
         title: 'Shopping Cart',
       },
     },
+    {
+      path: '/add-product',
+      name: 'add-product',
+      component: AddProductPage,
+      meta: {
+        title: 'Add Product',
+      },
+    }
   ],
   // Прокрутка страницы вверх при переходе между роутами
   scrollBehavior(to, from, savedPosition) {
